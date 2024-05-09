@@ -5,7 +5,7 @@ var messages = document.getElementById('messages');
 var username = document.getElementById('username');
 var loginDiv = document.getElementById('login');
 var chatDiv = document.getElementById('chat');
-var topics = document.getElementById('topics');
+var topics = document.getElementById('topics'); 
 
 function login() {
     console.log('Logging in with username:', username.value);
