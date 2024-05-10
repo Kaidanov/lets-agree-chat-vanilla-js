@@ -1,8 +1,12 @@
 <!DOCTYPE html>
+
+<!-- This is the main HTML file for the LetsAgree application. -->
+
 <html lang="he">
 <head>
     <title>בואו נדבר</title>
     <style>
+        /* CSS styles for the application */
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f4f4f4;
@@ -59,10 +63,13 @@
 </head>
 
 <body dir="rtl">
+    <!-- Login section -->
     <div id="login">
         <input id="username" type="text" placeholder="הכנס שם משתמש" />
         <button onclick="login()">כניסה</button>
     </div>
+    
+    <!-- Chat section -->
     <div id="chat">
         <h2>בואו נדבר</h2>
         <label for="topics">נושאים לשיחה:</label>
@@ -80,6 +87,8 @@
             <button>שלח</button>
         </form>
     </div>
+    
+    <!-- JavaScript dependencies -->
     <script src="/socket.io/socket.io.js"></script>
     <script src="/chat.js"></script>
 </body>
