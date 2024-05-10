@@ -3,93 +3,58 @@
 <head>
     <title>בואו נדבר</title>
     <style>
-        /* Add your CSS styles here */
         body {
-            font: 13px Helvetica, Arial;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #login, #chat {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 350px;
+        }
+        #login input, #login button, #chat select, #chat button {
+            margin-bottom: 10px;
+            padding: 12px;
+            font-size: 16px;
+            width: 100%;
+        }
+        #login button, #chat button {
+            cursor: pointer;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
         }
         #chat {
             display: none;
         }
-        form {
-            background: #000;
-            padding: 3px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        form input {
-            border: 0;
-            padding: 10px;
-            width: 90%;
-            margin-right: .5%;
-        }
-        form button {
-            width: 9%;
-            background: rgb(130, 224, 255);
-            border: none;
-            padding: 10px;
-        }
         #messages {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
+            height: 200px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
         }
         #messages li {
-            padding: 5px 10px;
+            margin-bottom: 5px;
+            padding: 8px;
+            background-color: #e7e7e7;
+            border-radius: 4px;
         }
-        #messages li:nth-child(odd) {
-            background: #eee;
-        }
-        body {
-        font: 16px Arial, sans-serif;
-        background-color: #f4f4f4;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
-    #login, #chat {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
-    }
-    #login input, #login button, #chat select {
-        margin-bottom: 10px;
-        padding: 10px;
-        font-size: 16px;
-    }
-    #login button, #chat button {
-        cursor: pointer;
-        background-color: #007BFF;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-    }
-    #chat {
-        display: none;
-        width: 300px;
-    }
-    #messages {
-        height: 200px;
-        width: 100%;
-        overflow-y: scroll;
-        margin-bottom: 10px;
-        border: 1px solid #ddd;
-        padding: 10px;
-        border-radius: 5px;
-    }
-    #messages li {
-        margin-bottom: 10px;
-    }
-
-    
     </style>
 </head>
 
@@ -99,14 +64,20 @@
         <button onclick="login()">כניסה</button>
     </div>
     <div id="chat">
+        <h2>בואו נדבר</h2>
+        <label for="topics">נושאים לשיחה:</label>
         <select id="topics">
-            <option value="topic1"> מה עושים ביום שישי הבא?</option>
-            <option value="topic2"> הפרויקט הבא של אחרייטק</option>
-            <!-- Add more topics here -->
+            <option value="topic1">מה עושים ביום שישי הבא?</option>
+            <option value="topic2">הפרויקט הבא של אחרייטק</option>
+            <option value="topic3">טרנדים חדשים במוזיקה</option>
+            <option value="topic4">טיפים ללימודים והכנה לבגרויות</option>
+            <option value="topic5">השפעת מדיה חברתית על נוער</option>
+            <option value="topic6">איך להתמודד עם לחצים בתיכון</option>
         </select>
         <ul id="messages"></ul>
         <form id="form" action="">
-            <input id="input" autocomplete="off" /><button>שלח</button>
+            <input id="input" autocomplete="off" placeholder="הקלד הודעה" style="font-size: 20px; padding: 15px;" />
+            <button>שלח</button>
         </form>
     </div>
     <script src="/socket.io/socket.io.js"></script>
