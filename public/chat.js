@@ -12,6 +12,9 @@ var loginDiv = document.getElementById('login');
 var chatDiv = document.getElementById('chat');
 var topics = document.getElementById('topics');
 
+// Store all messages
+var allMessages = [];
+
 /**
  * Function to handle the login process.
  * Emits a 'login' event to the server with the entered username.
@@ -39,14 +42,37 @@ form.addEventListener('submit', function(e) {
 
 /**
  * Event listener for receiving chat messages from the server.
- * Appends the received message to the messages list if the topic matches the selected topic.
+ * Stores the received message and updates the displayed messages.
  */
 socket.on('chat message', function(msg) {
-    if (msg.topic === topics.value) {
-        console.log('Received message:', msg);
-        var item = document.createElement('li');
-        item.textContent = msg.user + ': ' + msg.message;
-        messages.appendChild(item);
-        window.scrollTo(0, document.body.scrollHeight);
-    }
+    console.log('Received message:', msg);
+    allMessages.push(msg);
+    displayMessages();
 });
+
+/**
+ * Function to display messages based on the selected topic.
+ */
+function displayMessages() {
+    // Clear the current messages
+    messages.innerHTML = '';
+
+    // Get the selected topic
+    var selectedTopic = topics.value;
+
+    // Filter messages based on the selected topic
+    var filteredMessages = allMessages.filter(message => message.topic === selectedTopic);
+
+    // Display the filtered messages
+    filteredMessages.forEach(message => {
+        var item = document.createElement('li');
+        item.textContent = message.user + ': ' + message.message;
+        messages.appendChild(item);
+    });
+
+    // Scroll to the bottom
+    window.scrollTo(0, document.body.scrollHeight);
+}
+
+// Event listener for the change event on the topics select element
+topics.addEventListener('change', displayMessages);
