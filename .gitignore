@@ -14,3 +14,5 @@ dist/
 # Logs and databases
 *.log
 *.sqlite
+
+.env

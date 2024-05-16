@@ -36,6 +36,23 @@ form.addEventListener('submit', function(e) {
     if (input.value) {
         console.log('Sending message:', input.value);
         socket.emit('chat message', { topic: topics.value, message: input.value });
+
+        fetch('/check-fact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ text: input.value }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            var item = document.createElement('li');
+            item.textContent = 'OpenAI: ' + data.response;
+            messages.appendChild(item);
+            window.scrollTo(0, document.body.scrollHeight);
+        })
+        .catch(error => console.error('Error:', error));
+
         input.value = '';
     }
 });
