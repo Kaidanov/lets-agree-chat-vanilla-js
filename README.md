@@ -1,10 +1,13 @@
 # My Project
 
 This is a chat application built with Node.js and Socket.io. It allows users to send and receive messages in real time.
+The chat has AI helper listening to the chat and if any sent facts from the participants are false then AI will state it. 
+
 
 ## Installation
 
 Clone the repository to your local machine:
+
 
 a basic socket.io vanilla javascript chat example echo "# My Project
 
@@ -14,22 +17,23 @@ Installation
 Clone the repository to your local machine:
 
 
-``` git clone https://github.com/username/repository.git ```
+``` git clone https://github.com/Kaidanov/letsagree.git ```
 
 Navigate to the project directory:
 
-``` cd repository ```
+``` cd letsagree ```
+
+**Tip - use pnpm to potimize the reusing and versions of the packages. 
 
 Install the dependencies:
 
-``` npm install ```
+``` pnpm install ```
 
 Usage
-Start the server:
 
-``` node ./server/index.js ```
+``` pnpm start ```
 
-Open your web browser and visit http://localhost:3000.
+this will run the node server and allow you to access and visit http://localhost:3000.
 <<<<<<< HEAD
 
 ## Working with open ai node project 
@@ -48,9 +52,9 @@ MIT" > README.md
 
 To run your Node.js project locally, you can follow these steps:
 
-Install Dependencies: Navigate to your project directory in the terminal and run npm install to install all the dependencies listed in your package.json file.
+Install Dependencies: Navigate to your project directory in the terminal and run pnpm install to install all the dependencies listed in your package.json file.
 
-Start the Server: If your package.json file has a start script, you can start your server with the command npm start. The start script usually looks something like this:
+Start the Server: If your package.json file has a start script, you can start your server with the command pnpm start. The start script usually looks something like this:
 
 "scripts": {
   "start": "node server/index.js"
@@ -85,9 +89,9 @@ git push heroku main
 
 To run your Node.js project locally, you can follow these steps:
 
-Install Dependencies: Navigate to your project directory in the terminal and run npm install to install all the dependencies listed in your package.json file.
+Install Dependencies: Navigate to your project directory in the terminal and run pnpm install to install all the dependencies listed in your package.json file.
 
-Start the Server: If your package.json file has a start script, you can start your server with the command npm start. The start script usually looks something like this: 
+Start the Server: If your package.json file has a start script, you can start your server with the command pnpm start. The start script usually looks something like this: 
 
 "scripts": {
   "start": "node server/index.js"
@@ -100,21 +104,33 @@ Remember to check the console for any error messages if your application isn't w
 
 heroku login
 heroku create
-# Push code to Heroku
+## Push code to Heroku
 git push heroku main
 
-# Update the remote for Heroku
+## Update the remote for Heroku
 heroku git:remote -a your-heroku-app-name
 
-# For GitHub, add changes to main branch
+## For GitHub, add changes to main branch
 git add .
 
-# Commit the changes
+## Commit the changes
 git commit -m "Update code"
 
-# Push the changes to the main branch on GitHub
+## Push the changes to the main branch on GitHub
 git push origin main
 
-# Publish the main branch to Heroku
+## Publish the main branch to Heroku
 git push heroku main
 >>>>>>> origin/openai-checkfact
+
+
+## Add api key for openai api usage
+  https://platform.openai.com/api-keys
+
+## Add var of api on Heroku
+  GO to settings -> Config Vars
+
+## add .env
+  Add a local file .env and add there a key OPENAI_API_KEY= '___Here_Is_You_API_Key'
+
+
