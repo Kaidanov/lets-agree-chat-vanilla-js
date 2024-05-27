@@ -132,4 +132,5 @@ This command will show you the most recent logs and will continue to stream new 
 
 Remember, you need to be logged into Heroku CLI and your project must be associated with a Heroku app to view its logs. If you're not logged in, you can do so by running heroku login.
 
+![image](https://github.com/Kaidanov/letsagree/assets/164266/904c82d3-436c-4d61-9304-7c033b8d4091)
 
