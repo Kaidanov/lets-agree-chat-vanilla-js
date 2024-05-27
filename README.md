@@ -1,31 +1,25 @@
-# My Project
+# Let's Agree Chat Application
 
-This is a chat application built with Node.js and Socket.io. It allows users to send and receive messages in real time.
-The chat has AI helper listening to the chat and if any sent facts from the participants are false then AI will state it. 
-
+This is a chat application built with Node.js and Socket.io. It allows users to send and receive messages in real time. Additionally, the chat features an AI helper that listens to the conversation and corrects any false facts shared by the participants.
 
 ## Installation
 
-Clone the repository to your local machine:
+### Clone the Repository
+
+First, clone the repository to your local machine:
+
+```bash
+git clone https://github.com/Kaidanov/letsagree.git
 
 
-a basic socket.io vanilla javascript chat example echo "# My Project
-
-This is a chat application built with Node.js and Socket.io. It allows users to send and receive messages in real time.
-
-Installation
-Clone the repository to your local machine:
-
-
-``` git clone https://github.com/Kaidanov/letsagree.git ```
 
 Navigate to the project directory:
 
 ``` cd letsagree ```
 
-**Tip - use pnpm to potimize the reusing and versions of the packages. 
+**Tip: Use pnpm to optimize the reuse and versioning of packages.
 
-Install the dependencies:
+##Install the dependencies:
 
 ``` pnpm install ```
 
@@ -34,21 +28,12 @@ Usage
 ``` pnpm start ```
 
 this will run the node server and allow you to access and visit http://localhost:3000.
-<<<<<<< HEAD
 
 ## Working with open ai node project 
+
+Refer to the OpenAI Node.js quickstart guide for integrating AI capabilities: OpenAI Quickstart.
 https://platform.openai.com/docs/quickstart?context=node
 
-
-=======
-
->>>>>>> origin/openai-checkfact
-Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-License
-MIT" > README.md
-<<<<<<< HEAD
 
 To run your Node.js project locally, you can follow these steps:
 
@@ -121,7 +106,6 @@ git push origin main
 
 ## Publish the main branch to Heroku
 git push heroku main
->>>>>>> origin/openai-checkfact
 
 
 ## Add api key for openai api usage
