@@ -8,8 +8,8 @@ This is a chat application built with Node.js and Socket.io. It allows users to 
 
 First, clone the repository to your local machine:
 
-```bash
-git clone https://github.com/Kaidanov/letsagree.git
+
+```git clone https://github.com/Kaidanov/letsagree.git```
 
 
 
@@ -116,5 +116,20 @@ git push heroku main
 
 ## add .env
   Add a local file .env and add there a key OPENAI_API_KEY= '___Here_Is_You_API_Key'
+
+
+## Check logs on Heroku server while running the app
+
+To check the logs of your Heroku application, you can use the heroku logs command in your terminal. Here's how you can do it:
+
+Open your terminal.
+Navigate to your project directory.
+Run the following command:
+
+```heroku logs --tail```
+
+This command will show you the most recent logs and will continue to stream new logs as long as the command is running. To stop viewing the logs, you can press Ctrl + C.
+
+Remember, you need to be logged into Heroku CLI and your project must be associated with a Heroku app to view its logs. If you're not logged in, you can do so by running heroku login.
 
 
